@@ -1,0 +1,24 @@
+public class DnaStrand {
+  public static String makeComplement(String dna) {
+    StringBuffer dna2= new StringBuffer();
+    
+    for (int i=0; i<dna.length(); i++)
+      switch (dna.charAt(i)){
+        case 'A':
+          dna2.append('T');
+        break;
+        case 'T':
+          dna2.append('A');
+        break;
+        case 'C':
+          dna2.append('G');
+        break;
+        case 'G':
+         dna2.append('C');
+        break;
+    
+    
+    }
+    return dna2.toString();
+  }
+}
