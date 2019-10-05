@@ -1,0 +1,9 @@
+public class CountingDuplicates {
+  public static int duplicateCount(String text) {
+    
+    String x = text.toLowerCase().replaceAll("(.)(?!.*?\\1)", "")
+                .replaceAll("(.)(?=.*?\\1)", "");
+    
+		return x.length();
+  }
+}
