@@ -1,0 +1,18 @@
+public class PangramChecker {
+  public boolean check(String sentence){
+    
+   sentence = sentence.toLowerCase();
+   
+   boolean x=true;
+   
+    for (int i=97; i<=122; i++){
+      if (!(sentence.contains(Character.toString(i)))){
+        x = false;
+     
+       }
+    }
+    
+    return x;
+    
+  }
+}
