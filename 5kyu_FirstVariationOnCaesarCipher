@@ -1,0 +1,87 @@
+import java.util.*;
+public class CaesarCipher {
+  public static List<String>  movingShift(String s, int shift) {
+			    
+	    
+	    StringBuilder SbTekst = new StringBuilder(s);
+
+	 for (int i=0,j=shift; i<SbTekst.length(); i++,j++) {
+		    	int x = SbTekst.charAt(i);
+		    	if (SbTekst.charAt(i)<123 && SbTekst.charAt(i)>96){
+		    			x += j;  			
+		    			  while (x<97) {
+		    	    		x+=26;
+			    		}
+		    			  while (x>122) {
+		    	    		x-=26;
+			    		}
+		    	}
+		    		else if	(SbTekst.charAt(i)<91 && SbTekst.charAt(i)>64) {
+		    			x += j;
+		    				while (x<65) {
+		    					x+=26;
+		    		}
+		    				while (x>90) {
+		    					x-=26;
+		    		}
+	    	}
+	    	
+	    	
+	    SbTekst.setCharAt(i,(char) x);
+	    	
+	    }
+
+	    ArrayList<String> lista = new ArrayList<String>();
+	    
+	  int z = SbTekst.length() / 5;
+    
+	    if (SbTekst.length()%5!=0)
+	    	 z+=1;
+         
+	    for (int i= 0,j=1; i<=3; i++,j++) {
+	    	if (i>0) {
+	    		lista.add(SbTekst.substring(z*i,z*j));
+	    	}
+	    	else {
+	    		lista.add(SbTekst.substring(i,z));
+	    	}
+	    }
+	    lista.add(SbTekst.substring(z*4,SbTekst.length()));
+	   
+	    return lista;   
+	   
+	}
+	
+	public static String  demovingShift(List<String> s, int shift) {
+		
+    String doZa = String.join("", s);
+	    StringBuilder SbTekst2 = new StringBuilder(doZa);
+	    
+	     for (int i=0,j=shift; i<SbTekst2.length(); i++,j++) {
+	    	int x = SbTekst2.charAt(i);
+	    	if (SbTekst2.charAt(i)<123 && SbTekst2.charAt(i)>96){
+	    			x -= j;
+	    			
+	    			while (x<97) {
+	    	    		x+=26;
+		    		}
+	    			while (x>122) {
+	    	    		x-=26;
+		    		}
+	    	}
+	    		else if	(SbTekst2.charAt(i)<91 && SbTekst2.charAt(i)>64) {
+	    			x -= j;
+	    				while (x<65) {
+	    					x+=26;
+	    		}
+	    				while (x>90) {
+	    					x-=26;
+	    		}
+    	}
+	    		
+	    SbTekst2.setCharAt(i,(char) x);
+	    
+	    	}
+        return SbTekst2.toString();
+}
+}
