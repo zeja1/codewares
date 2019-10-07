@@ -1,0 +1,15 @@
+public class Solution {
+
+    public static String camelCase(String str) {
+  
+  String[] tab = str.split(" ");
+	StringBuilder con = new StringBuilder();
+	for(String i: tab){
+     if (i.length()>0){
+		   con.append(i.substring(0, 1).toUpperCase()+i.substring(1));
+       }
+      } 
+		return con.toString();
+    }
+
+}
