@@ -1,0 +1,24 @@
+import java.util.LinkedList;
+
+class Persist {
+	public static int persistence(long n) {
+			long m=1;
+	    LinkedList<Long> stack = new LinkedList<Long>();
+	    
+	    if (n>9) {
+	    do {
+	        stack.push( n % 10 );
+	        n = n / 10;
+	    } while (n > 0); 
+	    } else {
+	    	return 0;
+	    }
+	    
+	    for(int i=0; i<stack.size(); i++) {
+	      m*=stack.get(i);
+	    }
+	    
+
+	    return persistence(m)+1;
+	}
+}
