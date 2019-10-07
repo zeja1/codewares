@@ -1,0 +1,14 @@
+import java.util.List;
+
+public class BinaryArrayToNumber {
+
+    public static int ConvertBinaryArrayToInt(List<Integer> binary) {
+    
+    int suma = binary.get(binary.size()-1);
+    for (int i=binary.size()-2, j=2; i>=0; i--,j*=2){
+      suma+=binary.get(i)*j;
+     }
+          return suma;
+        
+    }
+}
