@@ -1,0 +1,22 @@
+import java.util.Arrays;
+public class Poet {
+    public static int[] pendulum(final int[] values) {
+       Arrays.sort(values);
+       int [] nowy = new int[values.length];
+       int n=(int) Math.ceil((double)values.length/2)-1;
+       int w=n;
+       for (int i=0; i<values.length; i++){
+           if (i%2==0){
+             nowy[n]=values[i]; 
+              w+=1;
+             }
+             else{
+             nowy[w]=values[i];   
+             n-=1;
+             }
+          
+       
+       }
+       return nowy;
+    }
+}
